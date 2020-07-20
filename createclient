@@ -1,0 +1,35 @@
+mesc: error.o wrapunix.o wrapsock.o wraplib.o wrapstdio.o mesc.o readline.o writen.o tcp_listen.o wrappthread.o clientthread.o
+	cc -o mesc wrappthread.o clientthread.o error.o wrapunix.o wrapsock.o wraplib.o wrapstdio.o mesc.o readline.o writen.o tcp_listen.o -lpthread
+
+error.o: error.c acc.h
+	cc -c error.c
+
+tcp_listen.o: tcp_listen.c acc.h
+	cc -c tcp_listen.c
+
+wrapunix.o: wrapunix.c acc.h
+	cc -c wrapunix.c
+
+wrapsock.o: wrapsock.c acc.h
+	cc -c wrapsock.c
+
+wraplib.o: wraplib.c acc.h
+	cc -c wraplib.c
+
+wrapstdio.o: wrapstdio.c acc.h
+	cc -c wrapstdio.c
+
+mesc.o: mesc.c acc.h
+	cc -c mesc.c
+
+clientthread.o: clientthread.c acc.h
+	cc -c clientthread.c
+
+readline.o: readline.c acc.h
+	cc -c readline.c
+
+writen.o: writen.c acc.h
+	cc -c writen.c
+
+wrappthread.o: wrappthread.c acc.h
+	cc -c wrappthread.c
